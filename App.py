@@ -3,6 +3,8 @@ from Pages import Home, Project1, Project2, Project3
 from streamlit_navigation_bar import st_navbar
 import os
 from PIL import Image
+import pandas as pd
+import numpy as np
 
 image = Image.open('img/barca.png')
 st.set_page_config(initial_sidebar_state="collapsed", page_icon=image)
@@ -14,20 +16,23 @@ styles = {
     "nav": {
         "background-color": "royalblue",
         "display": "flex",
-        "justify-content": "center",
-        "position": "relative"
+        "justify-content": "center"
     },
     "img": {
-        "position": "absolute",
-        "left": "10px",
+        "position": "relative",
+        "display": "block",
+        "left": "0vw",
         "top": "4px",
         "width": "150px",
         "height": "40px",
     },
     "span": {
+        "display": "block",
         "color": "white",
         "padding": "0.4375rem 0.625rem",
+        "min-width": "20px",
     },
+
     "active": {
         "background-color": "white",
         "color": "var(--text-color)",
@@ -35,9 +40,10 @@ styles = {
         "padding": "14px",
     }
 }
+
 options = {
     "show_menu": False,
-    "show_sidebar": False,
+    "show_sidebar": True,
 }
 
 page = st_navbar(pages,
@@ -55,7 +61,6 @@ elif page == "Project3":
     Project3.Project3().app()
 else:
     Home.Home().app()
-
 
 
 
