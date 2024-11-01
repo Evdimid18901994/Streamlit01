@@ -19,11 +19,11 @@ styles = {
         "justify-content": "center"
     },
     "img": {
-        "position": "relative",
+        "position": "absolute",
         "display": "block",
-        "left": "0vw",
+        "left": "10px",
         "top": "4px",
-        "width": "150px",
+        "width": "60px",
         "height": "40px",
     },
     "span": {
