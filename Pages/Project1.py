@@ -1,7 +1,6 @@
 import streamlit as st
 import pandas as pd
 import numpy as np
-import streamlit_pandas as sp
   # Декоратор для кэширования
 
 class Project1:
@@ -19,7 +18,4 @@ class Project1:
         df = load_data()
         st.dataframe(df)
 
-        all_widgets = sp.create_widgets(df)
-        res = sp.filter_df(df, all_widgets)
-        st.write(res)
 
