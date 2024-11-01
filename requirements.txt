@@ -44,7 +44,6 @@ st-theme==1.2.3
 streamlit==1.33.0
 streamlit-js-eval==0.1.7
 streamlit-navigation-bar==3.2.0
-streamlit-pandas==0.0.9
 tenacity==8.5.0
 threadpoolctl==3.5.0
 toml==0.10.2
