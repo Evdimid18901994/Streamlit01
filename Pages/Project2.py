@@ -86,7 +86,8 @@ class Project2:
                     frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
                     frame_place.image(frame, channels="RGB")
 
-                    if cv2.waitKey(1) & 0xFF == ord("q") or stop_button:
+                    #cv2.waitKey(1) & 0xFF == ord("q") or stop_button:
+                    if stop_button:
                         break
 
                 # Освобождение ресурсов после остановки
