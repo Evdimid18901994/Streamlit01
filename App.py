@@ -5,6 +5,7 @@ import os
 from PIL import Image
 import pandas as pd
 import numpy as np
+import cv2
 
 image = Image.open('img/barca.png')
 st.set_page_config(initial_sidebar_state="collapsed", page_icon=image)
