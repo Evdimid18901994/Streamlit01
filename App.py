@@ -7,6 +7,18 @@ import pandas as pd
 import numpy as np
 import cv2
 
+# Attempt to load the image correctly
+try:
+    image = Image.open('img/barca.png')
+except FileNotFoundError:
+    st.error("Image not found. Please check the image path.")
+    image = None  # Fallback if image is not found
+
+if image:
+    st.set_page_config(initial_sidebar_state="collapsed", page_icon=image)
+else:
+    st.set_page_config(initial_sidebar_state="collapsed")
+
 # Google Analytics Script
 google_analytics_script = """
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-1GNCCCBG59"></script>
@@ -21,9 +33,6 @@ google_analytics_script = """
 
 # Inject the Google Analytics script into the page
 st.markdown(google_analytics_script, unsafe_allow_html=True)
-
-image = Image.open('img/barca.png')
-st.set_page_config(initial_sidebar_state="collapsed", page_icon=image)
 
 logo_path = os.path.join(os.path.dirname(__file__), "img", "barca.svg")
 pages = [" ",'Home','Project1', 'Project2', 'Project3']
