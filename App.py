@@ -7,6 +7,21 @@ import pandas as pd
 import numpy as np
 import cv2
 
+# Google Analytics Script
+google_analytics_script = """
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-1GNCCCBG59"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-1GNCCCBG59');
+</script>
+"""
+
+# Inject the Google Analytics script into the page
+st.markdown(google_analytics_script, unsafe_allow_html=True)
+
 image = Image.open('img/barca.png')
 st.set_page_config(initial_sidebar_state="collapsed", page_icon=image)
 
@@ -39,7 +54,6 @@ styles = {
         "color": "black",
         "font-weight": "normal",
         "padding": "14px",
-
     }
 }
 
@@ -63,6 +77,3 @@ elif page == "Project3":
     Project3.Project3().app()
 else:
     Home.Home().app()
-
-
-
